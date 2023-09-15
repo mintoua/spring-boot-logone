@@ -7,5 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GestionStockApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GestionStockApplication.class, args);
+
+		//Client client1 = new Client(1,"mta","tpkd","mta@gmail.com", CategorieClient.FIDELE);
 	}
 }
