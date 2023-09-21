@@ -1,17 +1,29 @@
 package logone.digitale.gestionstock.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.io.Serializable;
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name= "tb_facture")
-public class Facture {
+public class Facture implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     //TODO : JPA ASSOCIATION
-   // private Commande commande;
+    @OneToOne(mappedBy = "facture")
+    private Commande commande;
 
     @Column(name = "montant-total")
     private Double total;

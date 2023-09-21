@@ -38,6 +38,14 @@
         </dependency>
         <!-- fin dépendances ajoutées pour seance 1-->
 
+
+		<!-- seance-2 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+	<!--seance-2-->
 	</dependencies>
 
 	<build>
