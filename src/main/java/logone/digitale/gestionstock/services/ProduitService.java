@@ -17,17 +17,18 @@ public class ProduitService {
 
     //Create
     public Produit enregistrerProduit(Produit produit) {
-        return produitRepository.save(produit);
+        return produitRepository.save(produit); // insert into tb_produit values (?,?,?,?,?)
     }
 
     //ReadById
     public Produit trouverProduitParId(Long id) {
-        return produitRepository.findById(id).orElse(null);
+        return produitRepository.findById(id).orElse(null); // select from tb_produit where id:=?
     }
 
     //ReadAll
     public List<Produit> listerTousLesProduits() {
-        return produitRepository.findAll();
+        //comment recuperer la liste de tous les produits
+        return produitRepository.findAll(); // select * from tb_produit
     }
 
     //Update
@@ -37,10 +38,10 @@ public class ProduitService {
 
     //Delete
     public void supprimerProduit(Long id) {
-        produitRepository.deleteById(id);
+        produitRepository.deleteById(id); // delete from tb_produit where id=:?
     }
 
-    @PostConstruct
+/*    @PostConstruct
     public void initialiserProduit() {
         Produit nouveauProduit = new Produit();
         nouveauProduit.setCodeProduit("PROD001");
@@ -55,5 +56,5 @@ public class ProduitService {
 
         // Enregistrement du produit dans la base de données.
         enregistrerProduit(nouveauProduit);
-    }
+    }*/
 }

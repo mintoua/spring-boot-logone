@@ -29,7 +29,7 @@ public class ClientService {
     }
 
 
-    @PostConstruct
+/*    @PostConstruct
     public void initialiserClient() {
         //créer un objet client
         Client nouveauClient = new Client();
@@ -42,6 +42,6 @@ public class ClientService {
 
         // Enregistrement du produit dans la base de données.
         enregistrerClient(nouveauClient);
-    }
+    }*/
 
 }
