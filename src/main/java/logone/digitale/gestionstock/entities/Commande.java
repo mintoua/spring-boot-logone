@@ -1,5 +1,6 @@
 package logone.digitale.gestionstock.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,12 +30,15 @@ public class Commande implements Serializable {
 
     //TODO : JPA ASSOCIATION
     @ManyToOne
+    @JsonIgnore
     private Client client;
 
     @OneToOne
+    @JsonIgnore
     private Facture facture;
 
     @OneToMany(mappedBy = "commande")
+    @JsonIgnore
     private List<DetailCommande> detailCommandes;
 
 }

@@ -1,5 +1,6 @@
 package logone.digitale.gestionstock.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import logone.digitale.gestionstock.models.CategorieClient;
 import lombok.AllArgsConstructor;
@@ -36,5 +37,6 @@ public class Client implements Serializable {
 
     //TODO : JPA ASSOCIATION
     @OneToMany(mappedBy = "client")
+    @JsonIgnore
     private List<Commande> commandes;
 }

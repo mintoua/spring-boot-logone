@@ -1,5 +1,6 @@
 package logone.digitale.gestionstock.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,7 @@ public class Stock implements Serializable {
     private Long id;
     //TODO: JPA ASSOCIATION
     @OneToMany(mappedBy = "stock")
+    @JsonIgnore
     private List<Produit> produit;
     @Column(name = "quantite-produit")
     private Integer quantite;

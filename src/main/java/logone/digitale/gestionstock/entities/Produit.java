@@ -1,5 +1,6 @@
 package logone.digitale.gestionstock.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,11 +36,14 @@ public class Produit implements Serializable {
 
     //TODO : JPA ASSOCIATION
     @ManyToOne
+    @JsonIgnore
     private DetailCommande detailCommande;
 
     @ManyToOne
+    @JsonIgnore
     private Stock stock;
 
     @ManyToMany
+    @JsonIgnore
     private List<Fournisseur> founisseurs;
 }
