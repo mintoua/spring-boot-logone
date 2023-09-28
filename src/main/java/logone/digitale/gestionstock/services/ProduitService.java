@@ -41,6 +41,7 @@ public class ProduitService {
         produitRepository.deleteById(id); // delete from tb_produit where id=:?
     }
 
+
 /*    @PostConstruct
     public void initialiserProduit() {
         Produit nouveauProduit = new Produit();
