@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class ProduitService {
 
-    private ProduitRepository produitRepository;
+    private final ProduitRepository produitRepository;
 
     //Create
     public Produit enregistrerProduit(Produit produit) {

@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @Service
@@ -21,27 +22,24 @@ public class ClientService {
     //2- Générer le constructeur parametré de ClientService // alternative @AllArgsConstructor
     //--fin de l'injection de la dépendance ClienRepository
 
-
     //CRUD
     //Create
-    public Client enregistrerClient(Client client){
+    public Client enregistrer(Client client){
         return clientRepository.save(client);
     }
 
+    //ReadAll
+    public List<Client> recupererTous(){
+        return clientRepository.findAll();
+    }
 
-/*    @PostConstruct
-    public void initialiserClient() {
-        //créer un objet client
-        Client nouveauClient = new Client();
-        nouveauClient.setNom("Mta");
-        nouveauClient.setPrenom("Tpkd");
-        nouveauClient.setEmail("mta@gmail.com");
-        nouveauClient.setCategorieClient(CategorieClient.ORDINAIRE);
-        // Initialisation de la liste des commandes (exemple avec une liste vide).
-        nouveauClient.setCommandes(new ArrayList<>());
+    //update
+    public Client modifier(Client client){
+        return clientRepository.save(client);
+    }
 
-        // Enregistrement du produit dans la base de données.
-        enregistrerClient(nouveauClient);
-    }*/
-
+    //Delete
+    public void supprimerParId(Long id){
+        clientRepository.deleteById(id);
+    }
 }

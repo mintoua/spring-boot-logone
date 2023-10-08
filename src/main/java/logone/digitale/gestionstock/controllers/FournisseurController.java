@@ -1,2 +1,4 @@
-package logone.digitale.gestionstock.controllers;public class FournisseurController {
+package logone.digitale.gestionstock.controllers;
+
+public class FournisseurController {
 }

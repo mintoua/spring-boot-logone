@@ -34,8 +34,8 @@ public class ProduitController {
 
     //Methode HTTP DELETE
     //URL:  http://localhost:8089/api/produits/delete/3
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteProduit(@PathVariable Long id){
+    @DeleteMapping("/delete/{idP}")
+    public ResponseEntity<String> deleteProduit(@PathVariable("idP") Long id){
         produitService.supprimerProduit(id);
         //return ResponseEntity.ok("Deleted Sucessfully");
         return ResponseEntity.status(HttpStatus.OK).body("Deleted Successfuly");
