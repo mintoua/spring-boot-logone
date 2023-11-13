@@ -17,7 +17,7 @@ public class CommandeController {
     private final CommandeService commandeService;
 
     //Methode HTTP GET
-    //URL: http://localhost:8089/api/commandes/
+    //URL: http://localhost:8089/api/commandes
     @GetMapping("")
     public ResponseEntity<List<Commande>> getAll(){
         List<Commande> commandes = commandeService.recupererTous();

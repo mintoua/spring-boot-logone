@@ -17,7 +17,7 @@ public class ClientController {
     final  private ClientService clientService;
 
     //Methode HTTP GET
-    //URL: http://localhost:8089/api/clients/
+    //URL: http://localhost:8089/api/clients
     @GetMapping("")
     public ResponseEntity<List<Client>> getAll(){
         List<Client> clients = clientService.recupererTous();

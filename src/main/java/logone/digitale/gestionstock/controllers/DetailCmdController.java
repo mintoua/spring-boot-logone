@@ -16,7 +16,7 @@ import java.util.List;
 public class DetailCmdController {
     private final DetailCmdService detailCmdService;
     //Methode HTTP GET
-    //URL: http://localhost:8089/api/detail-commandes/
+    //URL: http://localhost:8089/api/detail-commandes
     @GetMapping("")
     public ResponseEntity<List<DetailCommande>> getAll(){
         List<DetailCommande> detailCommandes = detailCmdService.recupererTous();
@@ -27,7 +27,7 @@ public class DetailCmdController {
     //URL:  http://localhost:8089/api/detail-commandes/add
     @PostMapping("/add")
     public ResponseEntity<DetailCommande> add(@RequestBody DetailCommande detailCommande){
-        DetailCommande commandeAjoute = detailCmdService.enregistrer(commande);
+        DetailCommande commandeAjoute = detailCmdService.enregistrer(detailCommande);
         return ResponseEntity.status(HttpStatus.CREATED).body(commandeAjoute);
     }
 
@@ -35,7 +35,7 @@ public class DetailCmdController {
     //URL:  http://localhost:8089/api/detail-commandes/delete/3
     @DeleteMapping("/delete/{idP}")
     public ResponseEntity<String> delete(@PathVariable("idP") Long id){
-        commandeService.supprimerParId(id);
+        detailCmdService.supprimerParId(id);
         //return ResponseEntity.ok("Deleted Sucessfully");
         return ResponseEntity.status(HttpStatus.OK).body("Deleted Successfuly");
     }

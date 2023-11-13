@@ -17,7 +17,7 @@ public class FactureController {
     private final FactureService factureService;
 
     //Methode HTTP GET
-    //URL: http://localhost:8089/api/factures/
+    //URL: http://localhost:8089/api/factures
     @GetMapping("")
     public ResponseEntity<List<Facture>> getAll(){
         List<Facture> factures = factureService.recupererTous();
