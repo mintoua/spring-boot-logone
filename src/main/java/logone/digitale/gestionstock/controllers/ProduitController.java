@@ -52,10 +52,10 @@ public class ProduitController {
 
     //
     @GetMapping("/produit-chers/{prix}")
-    public List<Produit> trouverProduitChers(
+    public ResponseEntity<List<Produit>> trouverProduitChers(
             @PathVariable("prix") Double prix
     ){
-        return produitService.lesProduitsChers(prix);
+        return new ResponseEntity<>(produitService.lesProduitsChers(prix),HttpStatus.OK);
     }
 }
 
