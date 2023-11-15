@@ -48,4 +48,14 @@ public class ProduitController {
         Produit produitModifie = produitService.modifierProduit(produit);
         return ResponseEntity.status(HttpStatus.CREATED).body(produitModifie);
     }
+
+
+    //
+    @GetMapping("/produit-chers/{prix}")
+    public List<Produit> trouverProduitChers(
+            @PathVariable("prix") Double prix
+    ){
+        return produitService.lesProduitsChers(prix);
+    }
 }
+

@@ -19,19 +19,20 @@ import java.util.List;
 @Table(name= "tb_client")
 public class Client implements Serializable {
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "nom-client")
+    @Column(name = "nom-client", nullable = false)
     private String nom;
 
     @Column(name = "prenom-client")
     private String prenom;
 
-    @Column(name = "email-client")
+    @Column(name = "email-client", unique = true)
     private String email;
 
-    @Column(name = "categorie-client")
+    @Column(name = "categorie-client", nullable = false)
     @Enumerated(EnumType.STRING)
     private CategorieClient categorieClient;
 

@@ -22,10 +22,10 @@ public class Fournisseur implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="nom-fournisseur")
+    @Column(name="nom-fournisseur", nullable = false)
     private String nom;
 
-    @Column(name="adresse-fournisseur")
+    @Column(name="adresse-fournisseur", nullable = false)
     private String adresse;
 
     @Column(name="telephone-fournisseur")

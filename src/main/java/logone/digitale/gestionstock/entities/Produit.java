@@ -31,8 +31,8 @@ public class Produit implements Serializable {
     @Column(name = "libelle-produit")
     private String libelleProduit;
 
-    @Column(name = "prix-unitaire")
-    private Double prixUnitaire;
+    @Column(name = "prix")
+    private Double prix;
 
     //TODO : JPA ASSOCIATION
     @ManyToOne

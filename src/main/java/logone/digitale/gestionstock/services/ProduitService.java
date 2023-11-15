@@ -33,13 +33,18 @@ public class ProduitService {
 
     //Update
     public Produit modifierProduit(Produit produit) {
-
         return produitRepository.save(produit);
     }
 
     //Delete
     public void supprimerProduit(Long id) {
         produitRepository.deleteById(id); // delete from tb_produit where id=:?
+    }
+
+
+    //methode avec JPQL dans l'interface Repository
+    public List<Produit> lesProduitsChers(Double prix) {
+        return produitRepository.trouverProduitsChers(prix);
     }
 
 }
